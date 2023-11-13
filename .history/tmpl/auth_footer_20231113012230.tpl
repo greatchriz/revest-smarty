@@ -2,7 +2,7 @@
     <html lang="en-US">
     
     
-    <!-- Mirrored from pixner.net/revest/revest/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 21:55:49 GMT -->
+    <!-- Mirrored from pixner.net/revest/revest/{"?a=login"|encurl} by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 21:55:49 GMT -->
     <head>
         <!-- required meta -->
         <meta charset="UTF-8" />
@@ -53,8 +53,8 @@
                         </a>
                         <div class="navbar__out order-2 order-xl-3">
                             <div class="nav__group__btn">
-                                <a href="login.html" class="log d-none d-sm-block"> Log In </a>
-                                <a href="registration.html" class="button button--effect d-none d-sm-block"> Join Now <i
+                                <a href="{"?a=login"|encurl}" class="log d-none d-sm-block"> Log In </a>
+                                <a href="{"?a=signup"|encurl}" class="button button--effect d-none d-sm-block"> Join Now <i
                                         class="fa-solid fa-arrow-right-long"></i> </a>
                             </div>
                             <button class="navbar-toggler d-block d-sm-none" type="button" data-bs-toggle="collapse"
@@ -68,10 +68,10 @@
                         <div class="collapse navbar-collapse order-3 order-xl-2" id="primaryNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item d-block d-sm-none">
-                                    <a href="login.html" class="nav-link">Log In</a>
+                                    <a href="{"?a=login"|encurl}" class="nav-link">Log In</a>
                                 </li>
                                 <li class="nav-item d-block d-sm-none">
-                                    <a href="registration.html" class="button button--effect button--last">Join Now <i
+                                    <a href="{"?a=signup"|encurl}" class="button button--effect button--last">Join Now <i
                                             class="fa-solid fa-arrow-right-long"></i></a>
                                 </li>
                             </ul>

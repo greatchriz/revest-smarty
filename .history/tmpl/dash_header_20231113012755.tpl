@@ -41,7 +41,7 @@
                                 <hr />
                                 <ul class="logout">
                                     <li>
-                                        <a href="login.html">
+                                        <a href="{"?a=login"|encurl}">
                                             <img src="assets/images/icons/logout.png" alt="Logout" /> Logout
                                         </a>
                                     </li>

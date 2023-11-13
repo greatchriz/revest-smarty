@@ -172,7 +172,7 @@
                                         </div>
                                     </div>
                                     <div class="item__cta__group">
-                                        <a href="registration.html" class="button button--effect">Invest Now</a>
+                                        <a href="{"?a=signup"|encurl}" class="button button--effect">Invest Now</a>
                                         <a href="property-details.html"
                                             class="button button--secondary button--effect">Details</a>
                                     </div>
@@ -263,7 +263,7 @@
                                         </div>
                                     </div>
                                     <div class="item__cta__group">
-                                        <a href="registration.html" class="button button--effect">Invest Now</a>
+                                        <a href="{"?a=signup"|encurl}" class="button button--effect">Invest Now</a>
                                         <a href="property-details.html"
                                             class="button button--secondary button--effect">Details</a>
                                     </div>
@@ -354,7 +354,7 @@
                                         </div>
                                     </div>
                                     <div class="item__cta__group">
-                                        <a href="registration.html" class="button button--effect">Invest Now</a>
+                                        <a href="{"?a=signup"|encurl}" class="button button--effect">Invest Now</a>
                                         <a href="property-details.html"
                                             class="button button--secondary button--effect">Details</a>
                                     </div>
@@ -445,7 +445,7 @@
                                         </div>
                                     </div>
                                     <div class="item__cta__group">
-                                        <a href="registration.html" class="button button--effect">Invest Now</a>
+                                        <a href="{"?a=signup"|encurl}" class="button button--effect">Invest Now</a>
                                         <a href="property-details.html"
                                             class="button button--secondary button--effect">Details</a>
                                     </div>
