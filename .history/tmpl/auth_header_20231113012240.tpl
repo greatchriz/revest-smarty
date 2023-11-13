@@ -48,7 +48,7 @@
             <header class="header header--secondary">
                 <nav class="navbar navbar-expand-xl">
                     <div class="container">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{"?a=home"|encurl}">
                             <img src="assets/images/logo.png" alt="Logo" class="logo" />
                         </a>
                         <div class="navbar__out order-2 order-xl-3">

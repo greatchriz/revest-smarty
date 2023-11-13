@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-4 col-xl-4">
                     <div class="footer__intro">
-                        <a href="index.html">
+                        <a href="{"?a=home"|encurl}">
                             <img
                                 src="assets/images/logo-light.png"
                                 alt="Revest"
@@ -229,6 +229,6 @@
 </body>
 
 
-<!-- Mirrored from pixner.net/revest/revest/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 21:55:33 GMT -->
+<!-- Mirrored from pixner.net/revest/revest/{"?a=home"|encurl} by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 21:55:33 GMT -->
 
 </html>

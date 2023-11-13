@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-4 col-xl-4">
                     <div class="footer__intro">
-                        <a href="index.html">
+                        <a href="{"?a=home"|encurl}">
                             <img src="assets/images/logo.png" alt="Revest" class="logo" />
                         </a>
                         <p><i class="fa-solid fa-location-dot"></i>1134 W Hubbard St. Floor 3, Chicago, IL, 60642,

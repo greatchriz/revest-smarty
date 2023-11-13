@@ -47,7 +47,7 @@
       <header class="dashboard-header">
           <div class="container">
               <div class="dashboard-header__area">
-                  <a href="index.html" class="header-logo">
+                  <a href="{"?a=home"|encurl}" class="header-logo">
                       <img src="assets/images/logo.png" alt="Logo" class="logo" />
                   </a>
                   <div class="dashboard-header__area-content">

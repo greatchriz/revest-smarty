@@ -2,7 +2,7 @@
     <html lang="en-US">
     
     
-    <!-- Mirrored from pixner.net/revest/revest/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 21:52:57 GMT -->
+    <!-- Mirrored from pixner.net/revest/revest/{"?a=home"|encurl} by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 21:52:57 GMT -->
     <head>
         <!-- required meta -->
         <meta charset="UTF-8" />
@@ -47,7 +47,7 @@
         <header class="header">
             <nav class="navbar navbar-expand-xl">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{"?a=home"|encurl}">
                         <img src="assets/images/logo.png" alt="Logo" class="logo" />
                     </a>
                     <div class="navbar__out order-2 order-xl-3">
@@ -71,7 +71,7 @@
                                     Home
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarHomeDropdown">
-                                    <li><a class="dropdown-item" href="index.html">Home</a></li>
+                                    <li><a class="dropdown-item" href="{"?a=home"|encurl}">Home</a></li>
                                     <li><a class="dropdown-item" href="index-two.html">Home Two</a></li>
                                     <li><a class="dropdown-item" href="index-three.html">Home Three</a></li>
                                 </ul>
