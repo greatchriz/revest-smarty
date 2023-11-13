@@ -1,9 +1,5 @@
 {include file="header.tpl"}
 
-{include file="dash_header.tpl"}
-
-<div class="main__content">
-  
 <h3>Ask for withdrawal:</h3><br>
 
 {if $say eq 'processed'}
@@ -274,10 +270,4 @@ You have no funds to withdraw.
 {/if}
 
 {/if}
-
-</div>
-
-{include file="dash_footer.tpl"}
-
-
 {include file="footer.tpl"}

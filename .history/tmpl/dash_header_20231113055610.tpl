@@ -11,7 +11,7 @@
                             <div class="sidenav__wrapper">
                                 <ul>
                                     <li>
-                                        <a href="{"?a=account"|encurl}" class="sidenav__active">
+                                        <a href="dashboard.html" class="sidenav__active">
                                             <img src="assets/images/icons/dashboard.png" alt="Dashboard" /> Dashboard
                                         </a>
                                     </li>

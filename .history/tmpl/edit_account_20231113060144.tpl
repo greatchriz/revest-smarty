@@ -1,9 +1,5 @@
 {include file="header.tpl"}
 
-{include file="dash_header.tpl"}
-
-<div class="main__content">
-  
 {literal}
 
 

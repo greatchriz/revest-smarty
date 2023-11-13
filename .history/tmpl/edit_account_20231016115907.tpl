@@ -1,9 +1,5 @@
 {include file="header.tpl"}
 
-{include file="dash_header.tpl"}
-
-<div class="main__content">
-  
 {literal}
 
 
@@ -312,10 +308,5 @@ document.getElementById('tfa_time').value = (new Date()).getTime();
  <td><input type=submit value="Change Account data" class=sbmt></td>
 </tr></table>
 </form>
-
-</div>
-
-{include file="dash_footer.tpl"}
-
 
 {include file="footer.tpl"}

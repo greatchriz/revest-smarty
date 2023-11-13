@@ -1,9 +1,5 @@
 {include file="header.tpl"}
 
-{include file="dash_header.tpl"}
-
-<div class="main__content">
-
 {if $frm.say eq 'deposit_success'}
 <h3>The deposit has been successfully saved.</h3>
 <br><br>
@@ -53,10 +49,5 @@
  <td colspan=2><input type=submit value="Spend" class=sbmt></td>
 </tr></table>
 </form>
-
-</div>
-
-{include file="dash_footer.tpl"}
-
 
 {include file="footer.tpl"}

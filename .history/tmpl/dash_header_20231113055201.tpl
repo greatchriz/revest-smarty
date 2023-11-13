@@ -11,29 +11,29 @@
                             <div class="sidenav__wrapper">
                                 <ul>
                                     <li>
-                                        <a href="{"?a=account"|encurl}" class="sidenav__active">
+                                        <a href="dashboard.html" class="sidenav__active">
                                             <img src="assets/images/icons/dashboard.png" alt="Dashboard" /> Dashboard
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{"?a=deposit"|encurl}">
+                                        <a href="{"?a=deposit"|encurl"}">
                                             <img src="assets/images/icons/investments.png" alt="Investments" />
                                             Invest
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{"?a=history"|encurl}">
+                                        <a href="transaction.html">
                                             <img src="assets/images/icons/transactions.png" alt="Transactions" />
                                             Transactions
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{"?a=withdraw"|encurl}">
+                                        <a href="withdraw.html">
                                             <img src="assets/images/icons/withdraw.png" alt="Withdraw" /> Withdraw
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{"?a=edit_account"|encurl}">
+                                        <a href="account.html">
                                             <img src="assets/images/icons/account.png" alt="Account" /> Account
                                         </a>
                                     </li>

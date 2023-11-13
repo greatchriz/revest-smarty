@@ -1,9 +1,5 @@
 {include file="header.tpl"}
 
-{include file="dash_header.tpl"}
-
-<div class="main__content">
-
 {if $fatal}
 
 {if $fatal == 'one_per_month'}
@@ -201,10 +197,4 @@ updateCompound();
 {/literal}
 
 {/if}
-
-</div>
-
-{include file="dash_footer.tpl"}
-
-
 {include file="footer.tpl"}

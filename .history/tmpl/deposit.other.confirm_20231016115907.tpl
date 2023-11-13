@@ -1,9 +1,5 @@
 {include file="header.tpl"}
 
-{include file="dash_header.tpl"}
-
-<div class="main__content">
-
 {if $ok == 1}
 <h3>Please confirm your deposit:</h3><br><br>
 
@@ -112,10 +108,5 @@ Click <a href="?a=deposit">here</a> and try again.
 
 
 {/if}
-
-</div>
-
-{include file="dash_footer.tpl"}
-
 
 {include file="footer.tpl"}
