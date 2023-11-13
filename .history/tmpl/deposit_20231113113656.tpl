@@ -102,6 +102,10 @@ Sorry, you cannot invest this plan anymore<br><br>
 <input type=hidden name=a value=deposit>
 {if $qplans > 1} Select a plan:<br>{/if}
 
+  <div class="container" style="red">
+    {include file="index.plans.tpl" assign="plans"}
+</div>
+
 {section name=plans loop=$plans}
 <table cellspacing=1 cellpadding=2 border=0 width=100%>
 <tr>

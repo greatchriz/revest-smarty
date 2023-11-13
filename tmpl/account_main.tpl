@@ -67,9 +67,7 @@
            </div>
            <div class="col-lg-7">
                <div class="main__content-dashboard__sidebar">
-                <div class="container" style="red">
-                    {include file="index.plans.tpl"}
-                </div>
+             
                    <div class="dashboard-single__box card-alt">
                        <div class="card-tab-btn__wrapper">
                            <a href="#bank" class="card-tab-btn">Bank Account</a>
