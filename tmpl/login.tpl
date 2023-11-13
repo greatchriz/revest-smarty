@@ -1,4 +1,4 @@
-{include file="auth_header.tpl"}
+{include file="header.tpl"}
 
 {literal}
 <script language=javascript>
@@ -46,4 +46,4 @@ Your login or password or turing image code is wrong. Please check this informat
 <br><br>
 or <a href="{"?a=forgot_password"|encurl}">remember your login information</a>.
 
-{include file="auth_footer.tpl"}
+{include file="footer.tpl"}

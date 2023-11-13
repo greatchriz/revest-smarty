@@ -1,4 +1,4 @@
-{include file="main_header.tpl"}
+{include file="header.tpl"}
 <h3>FAQ.</h3><br>
 <p align=justify> <b>How can I invest with {$site_name} ?</b><br>
   To make a investment you must first become a member of {$site_name} hyip. Once 
@@ -101,4 +101,4 @@
   These funds are managed by a team of {$site_name} HYIP investment experts. <br>
   <br>
 </p>
-{include file="main_footer.tpl"}
+{include file="footer.tpl"}

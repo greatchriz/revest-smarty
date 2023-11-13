@@ -1,321 +1,103 @@
 {include file="header.tpl"}
 
-{include file="dash_header.tpl"}
+{loaddata name="user_notices" var=notices}
 
-<div class="main__content">
-   <div class="collapse__sidebar">
-       <h4>Dashboard</h4>
-       <a href="javascript:void(0)" class="collapse__sidebar__btn">
-           <i class="fa-solid fa-bars-staggered"></i>
-       </a>
-   </div>
-   <div class="main__content-dashboard">
-       <div class="row">
-           <div class="col-lg-5">
-               <div class="main__content-dashboard__chart">
-                   <div class="balance-report__wrapper dashboard-single__box">
-                       <div class="balance-report">
-                           <div>
-                               <h4>€537,00</h4>
-                               <p class="secondary">Monthly Income</p>
-                           </div>
-                           <div class="dashboard-balance-report">
-                               <select class="select-balance-report">
-                                   <option value="last">Last Month</option>
-                                   <option value="january">January</option>
-                                   <option value="february">February</option>
-                                   <option value="march">March</option>
-                                   <option value="april">April</option>
-                                   <option value="may">May</option>
-                                   <option value="june">June</option>
-                                   <option value="july">July</option>
-                                   <option value="august">August</option>
-                                   <option value="september">September</option>
-                                   <option value="october">October</option>
-                                   <option value="november">November</option>
-                                   <option value="december">December</option>
-                               </select>
-                           </div>
-                       </div>
-                       <hr />
-                       <div class="group">
-                           <div class="group-inner">
-                               <p>Amount Invested</p>
-                               <h6><img src="assets/images/icons/invested.png"
-                                       alt="Invested" />€108.934,00</h6>
-                           </div>
-                           <div class="group-inner">
-                               <p>Total Earnings</p>
-                               <h6><img src="assets/images/icons/earned.png"
-                                       alt="Earned" />€12.606,00</h6>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="dashboard-single__box">
-                       <h5 class="investo">Investment Chart</h5>
-                       <div id="investmentChart"></div>
-                   </div>
-                   <div class="dashboard-single__box">
-                       <div class="intro">
-                           <h5>My Investments</h5>
-                           <a href="investment.html">Show All<i
-                                   class="fa-solid fa-arrow-right-long"></i></a>
-                       </div>
-                       <div class="property-wrap">
-                           <div class="poster">
-                               <a href="investment.html">
-                                   <img src="assets/images/los-two.png" alt="Los Angeles" />
-                               </a>
-                           </div>
-                           <h4><a href="investment.html">Los Angeles</a></h4>
-                           <p><i class="fa-solid fa-location-dot"></i>8706 Herrick Ave, Los
-                               Angeles</p>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <div class="col-lg-7">
-               <div class="main__content-dashboard__sidebar">
-                   <div class="dashboard-single__box card-alt">
-                       <div class="card-tab-btn__wrapper">
-                           <a href="#bank" class="card-tab-btn">Bank Account</a>
-                           <a href="#credit" class="card-tab-btn card-tab-btn-active">Credit
-                               Card</a>
-                       </div>
-                       <div class="card-tab-wrp" id="bank">
-                           <div class="card-tab-content">
-                               <a href="javascipt:void(0)" class="add-card"><i
-                                       class="fa-solid fa-plus"></i></a>
-                               <div class="card-content">
-                                   <p class="secondary card-no">Card No.</p>
-                                   <p>**** **** **** 4567</p>
-                                   <div class="group">
-                                       <div class="group-inner">
-                                           <p class="secondary">EXPIRY DATE </p>
-                                           <p class="secondary">09/24</p>
-                                       </div>
-                                       <div class="group-inner">
-                                           <p class="secondary">CURRENCY</p>
-                                           <p class="secondary">USD</p>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="card-tab-wrp" id="credit">
-                           <div class="card-tab-content">
-                               <a href="javascipt:void(0)" class="add-card"><i
-                                       class="fa-solid fa-plus"></i></a>
-                               <div class="card-content-slider-wrapper">
-                                   <div class="card-content-slider">
-                                       <div class="card-content-wrapper">
-                                           <div class="card-content">
-                                               <p class="secondary card-no">Card No.</p>
-                                               <p>**** **** **** 4567</p>
-                                               <div class="group">
-                                                   <div class="group-inner">
-                                                       <p class="secondary">EXPIRY DATE </p>
-                                                       <p class="secondary">09/24</p>
-                                                   </div>
-                                                   <div class="group-inner">
-                                                       <p class="secondary">CURRENCY</p>
-                                                       <p class="secondary">USD</p>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="card-content-wrapper">
-                                           <div class="card-content">
-                                               <p class="secondary card-no">Card No.</p>
-                                               <p>**** **** **** 4567</p>
-                                               <div class="group">
-                                                   <div class="group-inner">
-                                                       <p class="secondary">EXPIRY DATE </p>
-                                                       <p class="secondary">09/24</p>
-                                                   </div>
-                                                   <div class="group-inner">
-                                                       <p class="secondary">CURRENCY</p>
-                                                       <p class="secondary">USD</p>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="card-content-wrapper">
-                                           <div class="card-content">
-                                               <p class="secondary card-no">Card No.</p>
-                                               <p>**** **** **** 4567</p>
-                                               <div class="group">
-                                                   <div class="group-inner">
-                                                       <p class="secondary">EXPIRY DATE </p>
-                                                       <p class="secondary">09/24</p>
-                                                   </div>
-                                                   <div class="group-inner">
-                                                       <p class="secondary">CURRENCY</p>
-                                                       <p class="secondary">USD</p>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="card-content-wrapper">
-                                           <div class="card-content">
-                                               <p class="secondary card-no">Card No.</p>
-                                               <p>**** **** **** 4567</p>
-                                               <div class="group">
-                                                   <div class="group-inner">
-                                                       <p class="secondary">EXPIRY DATE </p>
-                                                       <p class="secondary">09/24</p>
-                                                   </div>
-                                                   <div class="group-inner">
-                                                       <p class="secondary">CURRENCY</p>
-                                                       <p class="secondary">USD</p>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="slick-slider-dots"></div>
-                       </div>
-                   </div>
-                   <div class="dashboard-single__box">
-                       <div class="intro">
-                           <h5>Last Income</h5>
-                           <a href="withdraw.html">Show All<i
-                                   class="fa-solid fa-arrow-right-long"></i></a>
-                       </div>
-                       <div class="last-income">
-                           <div class="group">
-                               <img src="assets/images/income.png" alt="Last Income" />
-                               <div>
-                                   <h6>Gerolstein | Am Rasbach 1-17</h6>
-                                   <p class="secondary">18.03.2022</p>
-                               </div>
-                           </div>
-                           <h6>€302,50</h6>
-                       </div>
-                       <div class="last-income">
-                           <div class="group">
-                               <img src="assets/images/income.png" alt="Last Income" />
-                               <div>
-                                   <h6>Gerolstein | Am Rasbach 1-17</h6>
-                                   <p class="secondary">18.03.2022</p>
-                               </div>
-                           </div>
-                           <h6>€302,50</h6>
-                       </div>
-                       <div class="last-income">
-                           <div class="group">
-                               <img src="assets/images/income.png" alt="Last Income" />
-                               <div>
-                                   <h6>Gerolstein | Am Rasbach 1-17</h6>
-                                   <p class="secondary">18.03.2022</p>
-                               </div>
-                           </div>
-                           <h6>€302,50</h6>
-                       </div>
-                   </div>
-                   <div class="dashboard-single__box">
-                       <div class="intro">
-                           <h5>New Investments</h5>
-                           <a href="properties.html">Show All<i
-                                   class="fa-solid fa-arrow-right-long"></i></a>
-                       </div>
-                       <div class="new-invest">
-                           <div class="poster">
-                               <a href="properties.html">
-                                   <img src="assets/images/san-two.png" alt="San Francisco" />
-                               </a>
-                           </div>
-                           <div class="invest-content">
-                               <div class="item__head__left">
-                                   <h6>Los Angeles</h6>
-                                   <div class="progress__type progress__type--two">
-                                       <div class="progress">
-                                           <div class="progress-bar" role="progressbar"
-                                               aria-valuenow="25" aria-valuemin="0"
-                                               aria-valuemax="100"></div>
-                                       </div>
-                                       <div class="project__info">
-                                           <p class="project__has"><span
-                                                   class="project__has__investors">119
-                                                   Investors</span> | <span
-                                                   class="project__has__investors__amount"><i
-                                                       class="fa-solid fa-dollar-sign"></i>
-                                                   4,94,196</span> <span
-                                                   class="project__has__investors__percent">(54.73%)</span>
-                                           </p>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="new-invest">
-                           <div class="poster">
-                               <a href="properties.html">
-                                   <img src="assets/images/san-two.png" alt="San Francisco" />
-                               </a>
-                           </div>
-                           <div class="invest-content">
-                               <div class="item__head__left">
-                                   <h6>Los Angeles</h6>
-                                   <div class="progress__type progress__type--two">
-                                       <div class="progress">
-                                           <div class="progress-bar" role="progressbar"
-                                               aria-valuenow="25" aria-valuemin="0"
-                                               aria-valuemax="100"></div>
-                                       </div>
-                                       <div class="project__info">
-                                           <p class="project__has"><span
-                                                   class="project__has__investors">119
-                                                   Investors</span> | <span
-                                                   class="project__has__investors__amount"><i
-                                                       class="fa-solid fa-dollar-sign"></i>
-                                                   4,94,196</span> <span
-                                                   class="project__has__investors__percent">(54.73%)</span>
-                                           </p>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="new-invest">
-                           <div class="poster">
-                               <a href="properties.html">
-                                   <img src="assets/images/san-two.png" alt="San Francisco" />
-                               </a>
-                           </div>
-                           <div class="invest-content">
-                               <div class="item__head__left">
-                                   <h6>Los Angeles</h6>
-                                   <div class="progress__type progress__type--two">
-                                       <div class="progress">
-                                           <div class="progress-bar" role="progressbar"
-                                               aria-valuenow="25" aria-valuemin="0"
-                                               aria-valuemax="100"></div>
-                                       </div>
-                                       <div class="project__info">
-                                           <p class="project__has"><span
-                                                   class="project__has__investors">119
-                                                   Investors</span> | <span
-                                                   class="project__has__investors__amount"><i
-                                                       class="fa-solid fa-dollar-sign"></i>
-                                                   4,94,196</span> <span
-                                                   class="project__has__investors__percent">(54.73%)</span>
-                                           </p>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-</div>
+{if $notices}
+<ul style="color:red">
+{foreach from=$notices item=n}
+<li><b>{$n.title}</b> {$n.text|nl2br}
+<form method=post>
+<input type=hidden name=a value=user_notices>
+<input type=hidden name=action value=notified>
+<input type=hidden name=id value={$n.id}>
+<input type=submit value="Dismiss">
+</form>
+{/foreach}
+</ul>
+{/if}
 
-{include file="dash_footer.tpl"}
+<h3>Your account:</h3><br>
+
+{if $settings.use_transaction_code ==1 && $userinfo.transaction_code == ''} <b>Note: currently you have not specified 
+a Transaction code. The Transaction code strengthens your funds security in our 
+system. The code is required to withdraw funds from your account{if $settings.internal_transfer_enabled} 
+and for internal transfer to another user account{/if}. Just do not change 'Transaction 
+code' in your account information if you do not want to use this feature. <a href=?a=edit_account>Click 
+here</a> to specify a new transaction code .</b> <br>
+<br>
+{/if}
+
+{if $userinfo.tfa_not_enabled} 
+<b>Security Note: please, activate <a href="{"?a=security"|encurl}">Two Factor Authentication</a> to keep your account safe.</b>
+{/if}
+
+<table cellspacing=0 cellpadding=2 border=0>
+<tr>
+ <td>User:</td>
+ <td>{$userinfo.username}</td>
+</tr><tr>
+ <td>Registration Date:</td>
+ <td>{$userinfo.create_account_date}</td>
+</tr><tr>
+ <td>Last Access:</td>
+ <td>{$last_access|default:"n/a"}&nbsp;</td>
+</tr><tr>
+ <td>&nbsp;</td>
+</tr><tr>
+ <td valign=top>Account Balance:</td>
+ <td>{$currency_sign}<b>{$ab_formated.total}</b><br>
+ <small>
+{foreach from=$ps item=p}
+   {if $p.balance > 0}{$currency_sign}{$p.balance} of {$p.name}<br>{/if}
+{/foreach}
+</tr><tr>
+ <td>Earned Total:</td>
+ <td>{$currency_sign}<b>{$ab_formated.earning}</b></td>
+</tr><tr>
+ <td>Pending Withdrawal:</td>
+ <td>{$currency_sign}<b>{$ab_formated.withdraw_pending}</b></td>
+</tr><tr>
+ <td>Withdrew Total:</td>
+ <td>{$currency_sign}<b>{$ab_formated.withdrawal}</b></td>
+</tr><tr>
+ <td>Active Deposit:</td>
+ <td>{$currency_sign}<b>{$ab_formated.active_deposit}</b></td>
+</tr><tr>
+ <td>&nbsp;</td>
+</tr>
+{if $last_deposit}
+<tr>
+ <td>Last Deposit:</td>
+ <td>{$currency_sign}<b>{$last_deposit|default:"n/a"}</b> &nbsp; <small>{$last_deposit_date|default:"n/a"}</small></td>
+</tr>
+{/if}
+{if $ab_formated.deposit != 0}
+<tr>
+ <td>Total Deposit:</td>
+ <td>{$currency_sign}<b>{$ab_formated.deposit}</b></td>
+</tr>
+{/if}
+{if $last_withdrawal}
+<tr>
+ <td>Last Withdrawal:</td>
+ <td>{$currency_sign}<b>{$last_withdrawal|default:"n/a"}</b> &nbsp; <small>{$last_withdrawal_date|default:"n/a"}</small></td>
+</tr>
+{/if}
+{if $ab_formated.withdrawal > 0}
+<tr>
+    <td>Withdrew Total:</td>
+ <td>{$currency_sign}<b>{$ab_formated.withdrawal}</b></td>
+</tr>
+{/if}
+<tr>
+ <td>&nbsp;</td>
+</tr></table>
+
+{section name=p loop=$ps}
+  {if $ps[p].pending_col > 0}{$ps[p].pending_col} {$ps[p].name} deposit{if $ps[p].pending_col > 1}s{/if} of {$currency_sign}{$ps[p].pending_amount} total pending<br>{/if}
+{/section}
+
+<br><br>
 
 
 {include file="footer.tpl"}
