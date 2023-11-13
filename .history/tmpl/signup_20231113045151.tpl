@@ -228,134 +228,133 @@
         
         <div class="registration__area">
           <h4 class="neutral-top">Registration</h4>
-          <p>Already Registered? <a href="{"?a=signup"|encurl}">Login</a></p>
+          <p>Already Registered? <a href="{"?a=signup"|encurl}">Login.</a></p>
         
-          <form method=post onsubmit="return checkform()" name="regform">
-          <input type=hidden name=a value="signup">
-          <input type=hidden name=action value="signup">
-          <table cellspacing=0 cellpadding=2 border=0>
+        <form method=post onsubmit="return checkform()" name="regform">
+        <input type=hidden name=a value="signup">
+        <input type=hidden name=action value="signup">
+        <table cellspacing=0 cellpadding=2 border=0>
+        <tr>
+        <td>Your Full Name:</td>
+        <td><input type=text name=fullname value='{$frm.fullname|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        {if $settings.use_user_location}
+        <tr>
+        <td>Your Address:</td>
+        <td><input type=text name=address value='{$frm.address|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        <tr>
+        <td>Your City:</td>
+        <td><input type=text name=city value='{$frm.city|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        <tr>
+        <td>Your State:</td>
+        <td><input type=text name=state value='{$frm.state|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        <tr>
+        <td>Your Zip:</td>
+        <td><input type=text name=zip value='{$frm.zip|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        <tr>
+        <td>Your Country:</td>
+        <td>
+          <select name=country class=inpts>
+        <option value="">--SELECT--</option>
+        {section name=c loop=$countries}
+        <option {if $countries[c].name eq $frm.country}selected{/if}>{$countries[c].name|escape:"quotes"}</option>
+        {/section}
+          </select>
+        </td>
+        </tr>
+        {/if}
+        <tr>
+        <td>Your Username:</td>
+        <td><input type=text name=username value='{$frm.username|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        <tr>
+        <td>Define Password:</td>
+        <td><input type=password name=password value='{$frm.password|escape:"quotes"}' class=inpts size=30></td>
+        </tr><tr>
+        <td>Retype Password:</td>
+        <td><input type=password name=password2 value='{$frm.password2|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        {if $settings.use_transaction_code}
+        <tr>
+        <td>Define Transaction Code:</td>
+        <td><input type=password name=transaction_code value='{$frm.transaction_code|escape:"quotes"}' class=inpts size=30></td>
+        </tr><tr>
+        <td>Retype Transaction Code:</td>
+        <td><input type=password name=transaction_code2 value='{$frm.transaction_code2|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        {/if}
+        {foreach from=$pay_accounts item=ps}
+        <tr>
+        <td>Your {$ps.name} Account:</td>
+        <td><input type=text class=inpts size=30 name=pay_account[{$ps.id}] value="{$ps.account|escape:html}" data-validate="{$ps.validate.func}" data-validate-{$ps.validate.func}="{$ps.validate[$ps.validate.func]}" data-validate-notice="{$ps.validate.notification|escape:html}" placeholder="{$ps.validate.placeholder|escape:html}"></td>
+        </tr>
+        {/foreach}
+        {foreach item=p from=$mpay_accounts}
+        {foreach item=ps from=$p.accounts}
+        <tr>
+        <td>Your {$p.name} {$ps.name}:</td>
+        <td><input type=text class=inpts size=30 name="pay_account[{$p.id}][{$ps.name|escape:html}]" value="{$ps.value|escape:html}"></td>
+        </tr>
+        {/foreach}
+        {/foreach}
+        <tr>
+        <td>Your E-mail Address:</td>
+        <td><input type=text name=email value='{$frm.email|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        <tr>
+        <td>Retype Your E-mail:</td>
+        <td><input type=text name=email1 value='{$frm.email1|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        <tr>
+        <td>Secret question:</td>
+        <td><input type=text name=sq value='{$frm.sq|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+        <tr>
+        <td>Secret answer:</td>
+        <td><input type=text name=sa value='{$frm.sa|escape:"quotes"}' class=inpts size=30></td>
+        </tr>
+
+        {if $settings.use_referal_program}
+        {if $referer}
+        <tr>
+        <td>Your Upline:</td>
+        <td>{*<a href="mailto:{$referer.email}">*}{$referer.name}{*</a>*} ({$referer.username|escape:html})</td>
+        </tr>
+        {else}
+        {if $settings.force_upline}
+        {if $settings.get_rand_ref}
           <tr>
-          <td>Your Full Name:</td>
-          <td><input type=text name=fullname value='{$frm.fullname|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          {if $settings.use_user_location}
-          <tr>
-          <td>Your Address:</td>
-          <td><input type=text name=address value='{$frm.address|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          <tr>
-          <td>Your City:</td>
-          <td><input type=text name=city value='{$frm.city|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          <tr>
-          <td>Your State:</td>
-          <td><input type=text name=state value='{$frm.state|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          <tr>
-          <td>Your Zip:</td>
-          <td><input type=text name=zip value='{$frm.zip|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          <tr>
-          <td>Your Country:</td>
-          <td>
-            <select name=country class=inpts>
-          <option value="">--SELECT--</option>
-          {section name=c loop=$countries}
-          <option {if $countries[c].name eq $frm.country}selected{/if}>{$countries[c].name|escape:"quotes"}</option>
-          {/section}
-            </select>
+          <td colspan=2>
+            You do not have an upline. Our system requires an upline for each user. You'll have to agree to get a random one or find a referral link on the net.
+            <input type=checkbox name="rand_ref" value=1>
           </td>
           </tr>
-          {/if}
+        {else}
           <tr>
-          <td>Your Username:</td>
-          <td><input type=text name=username value='{$frm.username|escape:"quotes"}' class=inpts size=30></td>
+          <td colspan=2>
+            You do not have an upline. Our system requires an upline for each user.
+          </td>
           </tr>
-          <tr>
-          <td>Define Password:</td>
-          <td><input type=password name=password value='{$frm.password|escape:"quotes"}' class=inpts size=30></td>
-          </tr><tr>
-          <td>Retype Password:</td>
-          <td><input type=password name=password2 value='{$frm.password2|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          {if $settings.use_transaction_code}
-          <tr>
-          <td>Define Transaction Code:</td>
-          <td><input type=password name=transaction_code value='{$frm.transaction_code|escape:"quotes"}' class=inpts size=30></td>
-          </tr><tr>
-          <td>Retype Transaction Code:</td>
-          <td><input type=password name=transaction_code2 value='{$frm.transaction_code2|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          {/if}
-          {foreach from=$pay_accounts item=ps}
-          <tr>
-          <td>Your {$ps.name} Account:</td>
-          <td><input type=text class=inpts size=30 name=pay_account[{$ps.id}] value="{$ps.account|escape:html}" data-validate="{$ps.validate.func}" data-validate-{$ps.validate.func}="{$ps.validate[$ps.validate.func]}" data-validate-notice="{$ps.validate.notification|escape:html}" placeholder="{$ps.validate.placeholder|escape:html}"></td>
-          </tr>
-          {/foreach}
-          {foreach item=p from=$mpay_accounts}
-          {foreach item=ps from=$p.accounts}
-          <tr>
-          <td>Your {$p.name} {$ps.name}:</td>
-          <td><input type=text class=inpts size=30 name="pay_account[{$p.id}][{$ps.name|escape:html}]" value="{$ps.value|escape:html}"></td>
-          </tr>
-          {/foreach}
-          {/foreach}
-          <tr>
-          <td>Your E-mail Address:</td>
-          <td><input type=text name=email value='{$frm.email|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          <tr>
-          <td>Retype Your E-mail:</td>
-          <td><input type=text name=email1 value='{$frm.email1|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          <tr>
-          <td>Secret question:</td>
-          <td><input type=text name=sq value='{$frm.sq|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
-          <tr>
-          <td>Secret answer:</td>
-          <td><input type=text name=sa value='{$frm.sa|escape:"quotes"}' class=inpts size=30></td>
-          </tr>
+        {/if}
+        {/if}
+        {/if}
+        {/if}
 
-          {if $settings.use_referal_program}
-          {if $referer}
-          <tr>
-          <td>Your Upline:</td>
-          <td>{*<a href="mailto:{$referer.email}">*}{$referer.name}{*</a>*} ({$referer.username|escape:html})</td>
-          </tr>
-          {else}
-          {if $settings.force_upline}
-          {if $settings.get_rand_ref}
-            <tr>
-            <td colspan=2>
-              You do not have an upline. Our system requires an upline for each user. You'll have to agree to get a random one or find a referral link on the net.
-              <input type=checkbox name="rand_ref" value=1>
-            </td>
-            </tr>
-          {else}
-            <tr>
-            <td colspan=2>
-              You do not have an upline. Our system requires an upline for each user.
-            </td>
-            </tr>
-          {/if}
-          {/if}
-          {/if}
-          {/if}
+        {include file="captcha.tpl" action="signup"}
+        <tr>
+        <td colspan=2><input type=checkbox name=agree value=1 {if $frm.agree}checked{/if} > I agree with <a href="{"?a=rules"|encurl}">Terms and conditions</a></td>
+        </tr>
 
-          {include file="captcha.tpl" action="signup"}
-          <tr>
-          <td colspan=2><input type=checkbox name=agree value=1 {if $frm.agree}checked{/if} > I agree with <a href="{"?a=rules"|encurl}">Terms and conditions</a></td>
-          </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td><input type=submit value="Register" class=sbmt></td>
+        </tr></table>
+        </form>
 
-          <tr>
-          <td>&nbsp;</td>
-          <td><input type=submit value="Register" class=sbmt></td>
-          </tr></table>
-          </form>
-
-        </div>
 
         {/if}
 
