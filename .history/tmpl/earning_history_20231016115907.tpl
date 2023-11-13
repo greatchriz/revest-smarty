@@ -1,9 +1,5 @@
 {include file="header.tpl"}
 
-{include file="dash_header.tpl"}
-
-<div class="col-lg-12">
-
 {literal}
 <script language=javascript>
 function go(p)
@@ -120,10 +116,5 @@ To: <select name=month_to class=inpts>
 </table>
 
 {paginator col=$paginator.col cur=$paginator.cur url="javascript:go('%s')"}
-
-</div>
-
-{include file="dash_footer.tpl"}
-
 
 {include file="footer.tpl"}

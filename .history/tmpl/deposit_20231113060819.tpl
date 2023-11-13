@@ -2,7 +2,7 @@
 
 {include file="dash_header.tpl"}
 
-<div class="col-lg-12">
+<div class="main__content">
 
 {if $fatal}
 
