@@ -497,6 +497,9 @@
             </div>
         </div>
     </div>
+    <div class="cta__btn">
+        <a href="property-details.html" class="button button--effect">Load More</a>
+    </div>
     </div>
     </section>
     <!-- ==== properties grid section end ==== -->
