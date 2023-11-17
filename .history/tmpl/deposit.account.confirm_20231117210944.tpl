@@ -20,9 +20,6 @@
                 <h5>Please confirm your deposit </h5>
             </div>
 
-            <div class="account-content-single__inner">
-                <div class="content">
-
             <table
                 cellspacing=0
                 cellpadding=2
@@ -74,74 +71,63 @@
                         <td>{$currency_sign}{$deposit.amount}</td>
                     </tr>
                 </table>
-                </div>
-            </div>
 
-            <div class="account-content-single__inner">
-                <div class="content">
+                <form
+                    name=spend
+                    method=post
+                >
 
-                    <form
-                        name=spend
-                        method=post
+                    <input
+                        type=hidden
+                        name=a
+                        value=deposit
                     >
-
-                        <input
-                            type=hidden
-                            name=a
-                            value=deposit
-                        >
-                        <input
-                            type=hidden
-                            name=action
-                            value=confirm
-                        >
-                        <input
-                            type=hidden
-                            name=type
-                            value={$type}
-                        >
-                        <input
-                            type=hidden
-                            name=h_id
-                            value={$h_id}
-                        >
-                        <input
-                            type=hidden
-                            name=amount
-                            value="{$famount}"
-                        >
-                        <input
-                            type=hidden
-                            name=compound
-                            value={$compound}
-                        >
-                        <br><input
-                            type=submit
-                            value="Process"
-                            class=sbmt
-                        > &nbsp;
-                        <input
-                            type=button
-                            class=sbmt
-                            value="Cancel"
-                            onclick="document.location='?a=deposit'"
-                        >
-                    </form>
-                </div>
-            </div>
+                    <input
+                        type=hidden
+                        name=action
+                        value=confirm
+                    >
+                    <input
+                        type=hidden
+                        name=type
+                        value={$type}
+                    >
+                    <input
+                        type=hidden
+                        name=h_id
+                        value={$h_id}
+                    >
+                    <input
+                        type=hidden
+                        name=amount
+                        value="{$famount}"
+                    >
+                    <input
+                        type=hidden
+                        name=compound
+                        value={$compound}
+                    >
+                    <br><input
+                        type=submit
+                        value="Process"
+                        class=sbmt
+                    > &nbsp;
+                    <input
+                        type=button
+                        class=sbmt
+                        value="Cancel"
+                        onclick="document.location='?a=deposit'"
+                    >
+                </form>
 
             {else}
-                <div class="account-content-single__inner">
-                    <div class="content">
-                        {if $max_deposit_less == 1}Sorry, the maximal deposit is {$max_deposit_format}.<br>{/if}
-                        {if $wrong_plan == 1} The Plan does not exist. {/if}
-                        {if $not_enough_funds == 1} You have not enough funds to complete the operation.<br>{/if}
-                        {if $less_than_min == 1}The minimal spend amount for '{$plan_name}' is {$currency_sign}{$min_amount}.<br>{/if}
-                        {if $on_hold == 1}Sorry, this amount on hold now.<br>{/if}
-                        <br>
-                        Click <a href="{"?a=deposit"|encurl}">here</a> and try again.
-                    </div>
-                </div>
+                {if $max_deposit_less == 1}Sorry, the maximal deposit is {$max_deposit_format}.<br>{/if}
+                {if $wrong_plan == 1} The Plan does not exist. {/if}
+                {if $not_enough_funds == 1} You have not enough funds to complete the operation.<br>{/if}
+                {if $less_than_min == 1}The minimal spend amount for '{$plan_name}' is {$currency_sign}{$min_amount}.<br>{/if}
+                {if $on_hold == 1}Sorry, this amount on hold now.<br>{/if}
+                <br>
+                Click <a href="{"?a=deposit"|encurl}">here</a> and try again.
             {/if}
 
         </div>

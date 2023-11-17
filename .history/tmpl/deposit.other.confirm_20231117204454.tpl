@@ -6,7 +6,7 @@
 <div class="breadcrumb-dashboard">
     <h5>Confirm Deposit</h5>
     <div>
-        <a href="{"?a=home"|encurl}">Home</a>
+        <a href="index.html">Home</a>
         <i class="fa-solid fa-arrow-right-long"></i>
         <a href="javascript:void(0)">Confirm Deposit</a>
     </div>
