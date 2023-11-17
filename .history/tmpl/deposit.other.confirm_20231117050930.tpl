@@ -26,77 +26,75 @@
         </div>
         {if $deposit.id > 0}
 
-            <div class="account-content-single__inner">
-                <div class="content">
-                    <h6>Plan</h6>
-                    <p>{$deposit.name|escape:html}</p>
-                </div>
-            </div>
-
-            <div class="account-content-single__inner">
-                <div class="content">
-                    <h6>Profit:</h6>
-                    <p>
-                    {$deposit.percent}%
-                    {if $deposit.period == 'end' || $deposit.period == 'endh'}
-                        after {$deposit.periods} {$deposit.time_units}{if $deposit.periods != 1}s{/if}
-                    {else}
-                        {$deposit.period_name}
-                        for
-                        {if $deposit.periods == 0}
-                        lifelong
-                        {else}
-                        {$deposit.periods} {$deposit.time_units}{if $deposit.periods != 1}s{/if}
-                        {if $deposit.work_week}
-                            (mon-fri)
-                        {/if}
-                        {/if}
-                    {/if}
-                    </p>
-                </div>
-            </div>
-            
-            <div class="account-content-single__inner">
+        <div class="account-content-single__inner">
             <div class="content">
-                <h6>Principal Return:</h6>
+                <h6>Plan</h6>
+                <p>{$deposit.name|escape:html}</p>
+            </div>
+        </div>
+
+        <div class="account-content-single__inner">
+            <div class="content">
+                <h6>Profit:</h6>
                 <p>
-                {if $deposit.principal_return}
-                    Yes
-                    {if $deposit.principal_return_hold_percent > 0}
-                    , with {$deposit.principal_return_hold_percent|number_format:2}% fee
-                    {/if}
+                {$deposit.percent}%
+                {if $deposit.period == 'end' || $deposit.period == 'endh'}
+                    after {$deposit.periods} {$deposit.time_units}{if $deposit.periods != 1}s{/if}
                 {else}
-                    No (included in profit)
+                    {$deposit.period_name}
+                    for
+                    {if $deposit.periods == 0}
+                    lifelong
+                    {else}
+                    {$deposit.periods} {$deposit.time_units}{if $deposit.periods != 1}s{/if}
+                    {if $deposit.work_week}
+                        (mon-fri)
+                    {/if}
+                    {/if}
                 {/if}
                 </p>
             </div>
-            </div>
-            
-            <div class="account-content-single__inner">
-                <div class="content">
-                    <h6>Principal Withdraw:</h6>
-                    <p>
-                    {if $deposit.principal_withdraw}
-                        Available with
-                        {foreach from=$deposit.principal_withdraw_terms item=t name=wpt}
-                        {$t.percent}% fee
-                        {if $t.duration > 0}
-                            after {$t.duration} days
-                        {/if}
-                        {if !$smarty.foreach.wpt.last} or
-                        {/if}
-                        {/foreach}
-                        {if $deposit.principal_withdraw_duration_max}
-                        but before {$deposit.principal_withdraw_duration_max|number_format} days
-                        {/if}
-                    {else}
-                        Not available
+        </div>
+        
+        <div class="account-content-single__inner">
+        <div class="content">
+            <h6>Principal Return:</h6>
+            <p>
+            {if $deposit.principal_return}
+                Yes
+                {if $deposit.principal_return_hold_percent > 0}
+                , with {$deposit.principal_return_hold_percent|number_format:2}% fee
+                {/if}
+            {else}
+                No (included in profit)
+            {/if}
+            </p>
+        </div>
+        </div>
+        
+        <div class="account-content-single__inner">
+            <div class="content">
+                <h6>Principal Withdraw:</h6>
+                <p>
+                {if $deposit.principal_withdraw}
+                    Available with
+                    {foreach from=$deposit.principal_withdraw_terms item=t name=wpt}
+                    {$t.percent}% fee
+                    {if $t.duration > 0}
+                        after {$t.duration} days
                     {/if}
-                    </p>
-                </div>
+                    {if !$smarty.foreach.wpt.last} or
+                    {/if}
+                    {/foreach}
+                    {if $deposit.principal_withdraw_duration_max}
+                    but before {$deposit.principal_withdraw_duration_max|number_format} days
+                    {/if}
+                {else}
+                    Not available
+                {/if}
+                </p>
             </div>
-
-        {/if}
+        </div>
 
         {if $deposit.ec_fees.fee}
             <div class="account-content-single__inner">
@@ -111,7 +109,7 @@
                 </div>
             </div>
         {/if}
-
+        
         {if $deposit.converted_amount}
             <div class="account-content-single__inner">
                 <div class="content">
@@ -132,9 +130,34 @@
             </div>
         {/if}
 
+          
+          
     </div>
 
 
+    <tr>
+        <th> </th>
+        <td> </td>
+    </tr>
+
+
+    <div class="account-content-single__inner">
+        <div class="content">
+            <h6> </h6>
+            <p> </p>
+        </div>
+    </div>
+
+
+
+    <div class="account-content">
+
+        <h3>Please confirm your deposit:</h3>
+    </div>
+    <div class="account-content">
+
+        {$description}
+    </div>
     <div class="account-content">
         <table
             cellspacing=0
@@ -271,11 +294,17 @@
                 </table>
             {/if}
 
-            <div class="hero__cta__group">
-                <button type="submit" class="button button--effect">Save</button>
-                <button type="button" class="button button--secondary button--effect"                 onclick="document.location='?a=deposit'"
-                >Cancel</button>
-            </div>
+            <br><input
+                type=submit
+                value="Save"
+                class=sbmt
+            > &nbsp;
+            <input
+                type=button
+                class=sbmt
+                value="Cancel"
+                onclick="document.location='?a=deposit'"
+            >
         </form>
     </div>
 
