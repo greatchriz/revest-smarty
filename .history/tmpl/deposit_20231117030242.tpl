@@ -13,6 +13,7 @@
        .title {
             line-height: normal;
            font-weight: bold;
+           margin-bottom: 15px;
            border-bottom: 1px solid gray;
            padding-bottom: 5px;
        }
@@ -221,13 +222,13 @@
                      
 
 
-                        <h5 class="mt-5">Investment Amount ({$currency_sign})</h5>
+                        <h5>Investment Amount ({$currency_sign})</h5>
                         <div class="input input--secondary">
                             <input type="text" name="amount" id="investAmount" placeholder="5000"
                                 required="required" />
                         </div>
 
-                        <h5 class="mt-5">Spend funds from the Account Balance</h5>
+                        <h5>Spend funds from the Account Balance</h5>
                         <div class="radio__group">
                             {section name=p loop=$ps}
                                 {if $ps[p].balance > 0 and $ps[p].status == 1}
@@ -239,7 +240,7 @@
                             {/section}
                         </div>
 
-                        <h5 class="mt-5">Spend funds from External Wallet</h5>
+                        <h5>Spend funds from External Wallet</h5>
                         <div class="radio__group">
                             {section name=p loop=$ps}
                                 {if $ps[p].status}
@@ -251,13 +252,34 @@
                             {/section}
                         </div>
                             
-                        <div class="input__button">
-                            <button
-                                type="submit"
-                                class="button button--effect"
-                            >Spend</button>
-                        </div>            
-                          
+
+                        <table cellspacing=0 cellpadding=2 border=0>
+                          <tr>
+                            <td colspan=2>
+                             <table cellspacing=0 cellpadding=2 border=0>
+                          {section name=p loop=$ps}
+                             {if $ps[p].balance > 0 and $ps[p].status == 1}
+                              <tr>
+                               <td><input type=radio name=type value="account_{$ps[p].id}"></td>
+                               <td>Spend funds from the Account Balance {$ps[p].name}</td>
+                              </tr>
+                             {/if}
+                          {/section}
+
+                          {section name=p loop=$ps}
+                             {if $ps[p].status}
+                              <tr>
+                               <td><input type=radio name=type value="process_{$ps[p].id}" {if $smarty.section.p.index == 0}checked{/if}></td>
+                               <td>Spend funds from {$ps[p].name}</td>
+                              </tr>
+                             {/if}
+                          {/section}
+                             </table>
+                            </td>
+                          </tr>
+                          <tr>
+                           <td colspan=2><input type=submit value="Spend" class=sbmt></td>
+                          </tr></table>
                       </div>
                   </div>
 
