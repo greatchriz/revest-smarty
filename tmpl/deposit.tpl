@@ -103,13 +103,16 @@
                                                 <div>
                                                     <input
                                                         type="radio"
-                                                        id="process_1006"
+                                                        id="{$plans[plans].id}"
                                                         class="radio-input"
-                                                        name="flexRadioDefault"
-                                                        value="process_1006"
-                                                    >
+                                                        name=h_id
+                                                        value='{$plans[plans].id}'
+                                                        {if (($smarty.section.plans.first == 1) && ($frm.h_id eq '')) || ($frm.h_id == $plans[plans].id)}
+                                                            checked
+                                                        {/if}
+                                                                                            >
                                                     <label
-                                                        for="process_1006"
+                                                        for="{$plans[plans].id}"
                                                         class="radio-label"
                                                     > <span class="radio-border"></span>{$plans[plans].name}</label>
                                                 </div>
