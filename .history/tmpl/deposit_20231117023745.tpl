@@ -214,13 +214,37 @@
                         {/section}</small>
                         <hr>
 
-                        <h5>Investment Amount ({$currency_sign})</h5>
+                        <h5>Investment Amount (100 €-30991€)</h5>
                         <div class="input input--secondary">
-                            <input type="text" name="amount" id="investAmount" placeholder="5000"
+                            <input type="number" name="invest__amount" id="investAmount" placeholder="5000"
                                 required="required" />
                         </div>
 
                         <table cellspacing=0 cellpadding=2 border=0>
+                          <tr>
+                           <td>Your account balance ({$currency_sign}):</td>
+                           <td align=right>{$currency_sign}{$ab_formated.total}</td>
+                          </tr>
+                          <tr><td>&nbsp;</td>
+                           <td align=right>
+                            <small>
+                          {section name=p loop=$ps}
+                             {if $ps[p].balance > 0}{$currency_sign}{$ps[p].balance} of {$ps[p].name}{if $hold[p].amount > 0} / {$currency_sign}{$hold[p].amount} on hold{/if}<br>{/if}
+                          {/section}
+                            </small>
+                           </td>
+                          </tr>
+                          <tr>
+                           <td>Amount to Spend ({$currency_sign}):</td>
+                           <td align=right><input type=text name=amount value='{$min_deposit}' class=inpts size=15 style="text-align:right;"></td>
+                          </tr>
+                          <tr id="coumpond_block" style="display:none">
+                           <td>Compounding(%):</td>
+                           <td align=right>
+                            <select name="compound" class=inpts id="compound_percents"></select>
+                           </td>
+                          </tr>
+                          
                           <tr>
                             <td colspan=2>
                              <table cellspacing=0 cellpadding=2 border=0>
