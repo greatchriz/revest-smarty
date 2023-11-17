@@ -111,7 +111,7 @@
                                                     <label
                                                         for="process_1006"
                                                         class="radio-label"
-                                                    > <span class="radio-border"></span>{$plans.name}</label>
+                                                    > <span class="radio-border"></span> USDT TetherUS </label>
                                                 </div>
                                             </div>
                                         </div>
