@@ -210,13 +210,13 @@
                   <div class="investment__wrapper">
                       <div class="investment__wrapper__inner">
                         <P class="title">Your account balance ({$currency_sign}): <b>{$currency_sign} {$ab_formated.total}</b> </P>
-
-                        <P class="title">
+                        <small>
                             {section name=p loop=$ps}
-                                {if $ps[p].balance > 0}{$currency_sign}{$ps[p].balance} of {$ps[p].name}{if $hold[p].amount > 0} / {$currency_sign}{$hold[p].amount} on hold{/if}<br>{/if}
-                             {/section}
-                        </P>
-                     
+                               {if $ps[p].balance > 0}{$currency_sign}{$ps[p].balance} of {$ps[p].name}{if $hold[p].amount > 0} / {$currency_sign}{$hold[p].amount} on hold{/if}<br>{/if}
+                            {/section}
+                            <hr>
+
+                              </small>
 
 
                         <h5>Investment Amount ({$currency_sign})</h5>
