@@ -121,6 +121,10 @@
                     <h5>Debit Amount:</h5>
                     <p>{$currency_sign}{$deposit.converted_amount}</p>
                 </div>
+                <div class="content">
+                    <h5>{$deposit.converted_fiat} Debit Amount:</h5>
+                    <p>{$deposit.amount}</p>
+                </div>
             </div>
         {else}
             <div class="account-content-single__inner">
