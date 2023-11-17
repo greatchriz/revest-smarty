@@ -55,39 +55,17 @@
           
           {section name=plans loop=$plans}
             <div class="col-xl-4 col-md-6 property__grid__area__wrapper__inner">
+
+              <div class="form-check m-4 p-4">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Default radio
+                </label>
+              </div>
+
               <div class="property__list__wrapper property__grid">
                 <div class="row d-flex align-items-center">
                   <div class="property__grid__area__wrapper__inner__two">
-
-                    {if $qplans > 1}
-
-                    <div class="form-check mx-3 p-3">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name=h_id
-                        value='{$plans[plans].id}'
-                        {if (($smarty.section.plans.first == 1) && ($frm.h_id eq '')) || ($frm.h_id == $plans[plans].id)}
-                          checked
-                        {/if}
-                        id="{$plans[plans].id}"
-                      >
-                      <label
-                        class="form-check-label fw-bold"
-                        for="{$plans[plans].id}"
-                      >
-                      {$plans[plans].name}
-                      </label>
-                    </div>
-
-                    {else}
-                      <input
-                        type=hidden
-                        name=h_id
-                        value='{$plans[plans].id}'
-                      >
-                    {/if}
-
                     <div class="property__item__image column__space--secondary">
                       <div class="img__effect">
                         <a href="property-details.html">
@@ -228,63 +206,149 @@
             </div>
           {/section}
 
-          <table cellspacing=0 cellpadding=2 border=0>
-            <tr>
-             <td>Your account balance ({$currency_sign}):</td>
-             <td align=right>{$currency_sign}{$ab_formated.total}</td>
-            </tr>
-            <tr><td>&nbsp;</td>
-             <td align=right>
-              <small>
-            {section name=p loop=$ps}
-               {if $ps[p].balance > 0}{$currency_sign}{$ps[p].balance} of {$ps[p].name}{if $hold[p].amount > 0} / {$currency_sign}{$hold[p].amount} on hold{/if}<br>{/if}
-            {/section}
-              </small>
-             </td>
-            </tr>
-            <tr>
-             <td>Amount to Spend ({$currency_sign}):</td>
-             <td align=right><input type=text name=amount value='{$min_deposit}' class=inpts size=15 style="text-align:right;"></td>
-            </tr>
-            <tr id="coumpond_block" style="display:none">
-             <td>Compounding(%):</td>
-             <td align=right>
-              <select name="compound" class=inpts id="compound_percents"></select>
-             </td>
-            </tr>
-            
-            <tr>
-              <td colspan=2>
-               <table cellspacing=0 cellpadding=2 border=0>
-            {section name=p loop=$ps}
-               {if $ps[p].balance > 0 and $ps[p].status == 1}
-                <tr>
-                 <td><input type=radio name=type value="account_{$ps[p].id}"></td>
-                 <td>Spend funds from the Account Balance {$ps[p].name}</td>
-                </tr>
-               {/if}
-            {/section}
-            {section name=p loop=$ps}
-               {if $ps[p].status}
-                <tr>
-                 <td><input type=radio name=type value="process_{$ps[p].id}" {if $smarty.section.p.index == 0}checked{/if}></td>
-                 <td>Spend funds from {$ps[p].name}</td>
-                </tr>
-               {/if}
-            {/section}
-               </table>
-              </td>
-            </tr>
-            <tr>
-             <td colspan=2><input type=submit value="Spend" class=sbmt></td>
-            </tr></table>
-
           </form>
-          {/if}
 
       </div>
     </div>
 </section>
 <!-- ==== properties grid section end ==== -->
+
+
+
+  
+  
+    
+    <form method=post name="spendform">
+    <input type=hidden name=a value=deposit>
+    {if $qplans > 1} Select a plan:<br>{/if}
+    
+    {section name=plans loop=$plans}
+      <table
+        cellspacing=1
+        cellpadding=2
+        border=0
+        width=100%
+      >
+        <tr>
+          <td colspan=3>
+            {if $qplans > 1}
+              <input
+                type=radio
+                name=h_id
+                value='{$plans[plans].id}'
+                {if (($smarty.section.plans.first == 1) && ($frm.h_id eq '')) || ($frm.h_id == $plans[plans].id)}
+                  checked
+                {/if}
+                onclick="updateCompound()"
+              >
+              <!--	<input type=radio name=h_id value='{$plans[plans].id}' {if (($smarty.section.plans.first == 1) && ($frm.h_id eq '')) || ($frm.h_id == $plans[plans].id)} checked {/if} {if $compounding_available > 0}onclick="document.spendform.compound.disabled={if $plans[plans].use_compound == 1}false{else}true{/if};"{/if}> -->
+            {else}
+              <input
+                type=hidden
+                name=h_id
+                value='{$plans[plans].id}'
+              >
+            {/if}
+
+            <b>{$plans[plans].name}</b>
+          </td>
+        </tr>
+        <tr>
+          <td class=inheader>Plan</td>
+          <td
+            class=inheader
+            width=200
+          >Spent Amount ({$currency_sign})</td>
+          <td
+            class=inheader
+            width=100
+            nowrap
+          >
+            <nobr>{$plans[plans].period} Profit (%)</nobr>
+          </td>
+        </tr>
+        {section name=options loop=$plans[plans].plans}
+          <tr>
+            <td class=item>{$plans[plans].plans[options].name|escape:html}</td>
+            <td
+              class=item
+              align=right
+            >{$plans[plans].plans[options].deposit}</td>
+            <td
+              class=item
+              align=right
+            >{$plans[plans].plans[options].percent}</td>
+          </tr>
+        {/section}
+      </table><br><br>
+ 
+    {/section}
+
+    
+    <table cellspacing=0 cellpadding=2 border=0>
+    <tr>
+     <td>Your account balance ({$currency_sign}):</td>
+     <td align=right>{$currency_sign}{$ab_formated.total}</td>
+    </tr>
+    <tr><td>&nbsp;</td>
+     <td align=right>
+      <small>
+    {section name=p loop=$ps}
+       {if $ps[p].balance > 0}{$currency_sign}{$ps[p].balance} of {$ps[p].name}{if $hold[p].amount > 0} / {$currency_sign}{$hold[p].amount} on hold{/if}<br>{/if}
+    {/section}
+      </small>
+     </td>
+    </tr>
+    <tr>
+     <td>Amount to Spend ({$currency_sign}):</td>
+     <td align=right><input type=text name=amount value='{$min_deposit}' class=inpts size=15 style="text-align:right;"></td>
+    </tr>
+    <tr id="coumpond_block" style="display:none">
+     <td>Compounding(%):</td>
+     <td align=right>
+      <select name="compound" class=inpts id="compound_percents"></select>
+     </td>
+    </tr>
+    
+    <tr>
+      <td colspan=2>
+       <table cellspacing=0 cellpadding=2 border=0>
+    {section name=p loop=$ps}
+       {if $ps[p].balance > 0 and $ps[p].status == 1}
+        <tr>
+         <td><input type=radio name=type value="account_{$ps[p].id}"></td>
+         <td>Spend funds from the Account Balance {$ps[p].name}</td>
+        </tr>
+       {/if}
+    {/section}
+    {section name=p loop=$ps}
+       {if $ps[p].status}
+        <tr>
+         <td><input type=radio name=type value="process_{$ps[p].id}" {if $smarty.section.p.index == 0}checked{/if}></td>
+         <td>Spend funds from {$ps[p].name}</td>
+        </tr>
+       {/if}
+    {/section}
+       </table>
+      </td>
+    </tr>
+    <tr>
+     <td colspan=2><input type=submit value="Spend" class=sbmt></td>
+    </tr></table>
+    </form>
+    {literal}
+    <script language=javascript>
+    for (i = 0; i<document.spendform.type.length; i++) {
+      if ((document.spendform.type[i].value.match(/^process_/))) {
+        document.spendform.type[i].checked = true;
+        break;
+      }
+    }
+    updateCompound();
+    </script>
+    {/literal}
+    
+    {/if}
+
 
 {include file="main_footer.tpl"}
