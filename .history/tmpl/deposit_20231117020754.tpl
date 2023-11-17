@@ -175,6 +175,22 @@
                     </div>
                     {/section}
 
+                    {literal}
+                        <script language=javascript>
+                            const containers = document.querySelectorAll('.property-card');
+
+                            containers.forEach(container => {
+                                container.addEventListener('click', () => {
+                                    const radio = container.querySelector('input[type="radio"]');
+                                    radio.checked = true;
+
+                                    const amountCard = document.getElementById('amount-card');
+                                    window.scrollTo(0, amountCard.offsetTop);
+                                });
+                            });
+                        </script>
+                    {/literal}
+
                   </div>
                 </div>
               </div>
@@ -253,21 +269,7 @@
           {/if}
 
 
-          {literal}
-              <script language=javascript>
-                  const containers = document.querySelectorAll('.property-card');
-
-                  containers.forEach(container => {
-                      container.addEventListener('click', () => {
-                          const radio = container.querySelector('input[type="radio"]');
-                          radio.checked = true;
-
-                          const amountCard = document.getElementById('amount-card');
-                          window.scrollTo(0, amountCard.offsetTop);
-                      });
-                  });
-              </script>
-          {/literal}
+          
 
 
     
