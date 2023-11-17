@@ -105,7 +105,7 @@
                                                         type="radio"
                                                         id="process_1006"
                                                         class="radio-input"
-                                                        name="flexRadioDefault"
+                                                        name="type"
                                                         value="process_1006"
                                                     >
                                                     <label
@@ -117,6 +117,15 @@
                                         </div>
                                     </div>
                                 </div>
+
+
+                                <div class="form-check m-3 px-4">
+                                    <input class="radio-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label fw-bolder fs-18" for="flexRadioDefault1">
+                                        Los Angelis
+                                    </label>
+                                  </div>
+
                                 <div class="property__grid__area__wrapper__inner__two">
                                     <div class="property__item__image column__space--secondary">
                                         <div class="img__effect">
